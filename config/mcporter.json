@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "windsor-ai": {
+      "description": "Windsor.ai MCP — natural language access to 325+  data sources.",
+      "baseUrl": "https://mcp.windsor.ai/sse",
+      "headers": {
+        "Authorization": "Bearer ${WINDSOR_API_KEY}"
+      }
+    }
+  }
+}
