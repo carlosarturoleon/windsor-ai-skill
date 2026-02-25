@@ -1,7 +1,7 @@
 ---
 name: windsor-ai
 description: Connect to Windsor.ai MCP for natural language access to 325+  data sources including Facebook Ads, GA4, HubSpot, Shopify, and more.
-metadata: {"clawdbot":{"emoji":"📊","requires":{"bins":["mcporter"],"env":["WINDSOR_API_KEY"]}}}
+metadata: {"clawdbot":{"emoji":"📊","requires":{"bins":["mcporter","npx","node"],"env":["WINDSOR_API_KEY"]},"credentials":{"primary":"WINDSOR_API_KEY"}}}
 ---
 
 # Windsor.ai Analytics
@@ -41,14 +41,15 @@ echo 'WINDSOR_API_KEY=your_api_key_here' >> ~/.clawdbot/.env
 
 Replace `your_api_key_here` with the key you copied.
 
-Then export it to your shell so mcporter can resolve it:
+Then export it for your current session so mcporter can resolve it:
 
 ```bash
-echo 'export WINDSOR_API_KEY=your_api_key_here' >> ~/.zshrc
-source ~/.zshrc
+export WINDSOR_API_KEY=your_api_key_here
 ```
 
 > **Note:** mcporter requires `WINDSOR_API_KEY` to be exported as a shell environment variable. Simply storing it in `~/.clawdbot/.env` is not enough — it must be available in your active shell session.
+>
+> **Security note:** Avoid appending the key to `~/.zshrc` or other shell rc files, as this stores your secret in plaintext and loads it into every shell session. Prefer your system keychain, a secrets manager, or a `.env` file with restricted permissions (`chmod 600 ~/.clawdbot/.env`). If you do add it to your shell rc file, remove it once no longer needed.
 
 ### Step 3: Configure mcporter
 
@@ -194,8 +195,8 @@ Ask: "Generate a client ready performance report for [account/brand] for [date r
 
 **Failed to resolve header 'Authorization' / WINDSOR_API_KEY must be set:**
 - mcporter requires the variable to be exported in your shell, not just stored in `.env`
-- Run: `export $(cat ~/.clawdbot/.env | xargs) && npx mcporter list`
-- To fix permanently: `echo 'export WINDSOR_API_KEY=your_key' >> ~/.zshrc && source ~/.zshrc`
+- Run: `export WINDSOR_API_KEY=your_api_key_here && npx mcporter list`
+- To load from your `.env` file: `export $(grep -v '^#' ~/.clawdbot/.env | xargs) && npx mcporter list`
 
 **No data sources found:**
 - You must connect at least one data source in your Windsor.ai dashboard before querying
