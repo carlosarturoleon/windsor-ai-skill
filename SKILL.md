@@ -1,7 +1,7 @@
 ---
 name: windsor-ai
 description: Connect to Windsor.ai MCP for natural language access to 325+  data sources including Facebook Ads, GA4, HubSpot, Shopify, and more.
-metadata: {"clawdbot":{"emoji":"📊","requires":{"bins":["mcporter","npx","node"],"env":["WINDSOR_API_KEY"]},"credentials":{"primary":"WINDSOR_API_KEY"}}}
+metadata: {"clawdbot":{"emoji":"📊","requires":{"bins":["mcporter","npx","node"],"env":["WINDSOR_API_KEY"]}},"openclaw":{"primaryEnv":"WINDSOR_API_KEY"}}
 ---
 
 # Windsor.ai Analytics
