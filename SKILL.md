@@ -6,7 +6,7 @@ metadata: {"clawdbot":{"emoji":"📊","requires":{"bins":["mcporter"],"env":["WI
 
 # Windsor.ai Analytics
 
-Use this skill to query, explore, and analyze your Windsor.ai connected  and business data using natural language. Windsor.ai aggregates data from 325+ platforms: Facebook Ads, Google Analytics 4, HubSpot, Shopify, TikTok Ads, Salesforce, and hundreds more and exposes it through a single MCP interface.
+Use this skill to query, explore, and analyze your [Windsor.ai](https://windsor.ai) connected and business data using natural language. Windsor.ai aggregates data from 325+ platforms: Facebook Ads, Google Analytics 4, HubSpot, Shopify, TikTok Ads, Salesforce, and hundreds more and exposes it through a single MCP interface.
 
 ## When to Use This Skill
 
